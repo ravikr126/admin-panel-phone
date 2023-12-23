@@ -1,0 +1,8 @@
+sidebar me 2 changes karna hai
+
+
+jab sidebar me ushi location ko again click karna hai toh  a href me bass ushka locationlikna naa ki ..////
+
+ 2nnd changes
+
+ ./ hata dena jab ek folde bahar jana ho toh  only / lagana
