@@ -1,16 +1,18 @@
 import React from 'react'
+import { FaUserCircle } from "react-icons/fa";
+
 
 const Update_profile = () => {
   return (
     <>
-    <div>
+    <div className=''>
         {/* 1st block */}
-        <div className='flex flex-row'>
-            <div className='flex-col'>
-                <ul>
-                    <li><input type="text" placeholder='Name'/>Name</li>
-                </ul>
-            </div>
+        <div className='text-center'>
+            <ul>
+                <li><FaUserCircle  className='size-40' /></li>
+                <li className='text-black'>Name <input type="text" className='rounded-lg border-black p-3' placeholder='Name' /></li>
+            </ul>
+            
 
         </div>
     </div>
