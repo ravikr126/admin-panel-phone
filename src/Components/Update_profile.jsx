@@ -1,23 +1,28 @@
 import React from 'react'
-import { FaUserCircle } from "react-icons/fa";
-
 
 const Update_profile = () => {
   return (
     <>
-    <div className=''>
-        {/* 1st block */}
-        <div className='text-center'>
-            <ul>
-                <li><FaUserCircle  className='size-40' /></li>
-                <li className='text-black'>Name <input type="text" className='rounded-lg border-black p-3' placeholder='Name' /></li>
-            </ul>
-            
+    <div className='w-full items-start h-screen flex'>
+    {/* left side containt */}
+    <div className='h-full flex flex-col p-20 text-center'>
 
+        <h1 className='text-blue-950 font-bold text-5xl p-5'> Welcome</h1>
+        <h2 className='text-green-950 text-3xl p-5'>Sign In</h2>
+        <h3 className='text-green-950 text-3xl p-5'>Sign In to Logo. to continue</h3>
+        <div className='flex flex-col text-center justify-center'>
+            <input type="email" placeholder='Email id' className='border p-3 m-3 rounded-lg border-black'/>
+            <input type="password" placeholder='Password'  className='border p-3 m-3 rounded-lg border-black' />
+           
         </div>
-    </div>
+        
+        <button className='bg-blue-500 rounded-lg m-5 text-3xl p-5'> Sign Up</button>
+        
+</div>
+</div>
+    
     </>
   )
 }
 
-export default Update_profile
+export default Update_profile;
