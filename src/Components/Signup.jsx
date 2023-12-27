@@ -1,8 +1,11 @@
 import React from 'react'
+import Sidebar from './Sidebar'
 
 const Signup = () => {
   return (
     <>
+   <div className=' relative flex '>
+    <Sidebar/>
     <div className='w-full items-start h-screen flex'>
     {/* left side containt */}
     <div className='w-1/2 h-full flex flex-col p-20 text-center'>
@@ -29,6 +32,7 @@ const Signup = () => {
 
 
 
+    </div>
     </div>
     </>
   )
