@@ -1,10 +1,12 @@
 import React from "react";
 import Sidebar from "./Sidebar";
+import Header from "./Header";
 const Home = () => {
   return (
     <>
       <div>
         {/* code start */}
+        <Header />
         <div className=" relative flex flex-row ">
           <Sidebar />
 

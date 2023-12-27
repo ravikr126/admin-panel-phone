@@ -6,10 +6,10 @@ import Sidebar from "./Components/Sidebar"
 function App() {
   return (
     <>
-      {/* <Header />
-      <Home /> */}
+      {/* <Header /> */}
+      <Home /> 
       {/* <Update_profile /> */}
-      <Sidebar/>
+   
     </>
   );
 }

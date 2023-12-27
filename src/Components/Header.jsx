@@ -11,7 +11,7 @@ const Header = () => {
           {/* <!-- navbar --> */}
           <nav class="flex justify-between bg-gray-900 text-white w-screen">
             <div class="px-5 xl:px-12 py-6 flex w-full items-center">
-              <a class="text-3xl font-bold font-heading" href="#">
+              <a class="text-3xl font-bold font-heading" href="/Home">
                 {/* <!-- <img class="h-9" src="logo.png" alt="logo"> --> */}
                 Logo Here.
               </a>
@@ -39,7 +39,7 @@ const Header = () => {
                 </li>
               </ul>
               {/* <!-- Header Icons --> */}
-              <div class="hidden xl:flex items-center space-x-5 items-center">
+              <div class="hidden xl:flex items-center space-x-5 ">
                 <a class="hover:text-gray-200" href="#">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
