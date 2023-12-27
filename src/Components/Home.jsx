@@ -5,16 +5,16 @@ const Home = () => {
     <>
       <div>
         {/* code start */}
-        <div className=" relative flex flex-row">
+        <div className=" relative flex flex-row ">
           <Sidebar />
 
           {/* home section start */}
-          <div className="flex flex-col">
+          <div className="flex flex-col ">
             {/* upper boxex */}
 
-            <div class="h-screen mx-10 my-5">
+            <div class="h-screen mx-10 my-5 ">
               <div class="grid grid-cols-2 md:grid-cols-4 gap-20 pt-4 ">
-                <div class="pt-2 pb-8 bg-cyan-300 p-4  rounded-3xl">
+                <div class="pt-2 pb-8 bg-cyan-300 p-4  rounded-3xl ">
                   <h2 class="font-semibold text-xl pt-4 text-gray-800">
                     Feature 1
                   </h2>
@@ -340,8 +340,9 @@ const Home = () => {
                   </div>
                 </div>
               </div>
+              {/* upper boxex ends */}
             </div>
-            {/* upper boxex ends */}
+            {/* 2nd div row wali */}
           </div>
         </div>
         {/* table end */}
