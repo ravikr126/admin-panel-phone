@@ -65,7 +65,7 @@ const Home = () => {
 
               <div class="items-center bg-gray-100 dark:bg-gray-900 block">
                 <div class="w-full mx-auto lg:container">
-                  <div class="max-w-screen-lg">
+                  <div class="w-full">
                     <div class="min-w-full my-10 overflow-x-auto border rounded-md shadow-sm ">
                       <table class="min-w-full bg-white rounded whitespace-nowrap">
                         <thead class="border-b bg-gray-50">
