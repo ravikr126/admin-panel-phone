@@ -9,7 +9,7 @@ const Sidebar = () => {
         href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
       />
 
-      <div class="min-h-screen flex flex-row bg-[#E0AED0] border ">
+      <div class="min-h-screen flex flex-row ">
         <div class="flex flex-col w-60 overflow-hidden bg-[#EEF5FF]">
           <ul class="flex flex-col py-4 m-2">
             <li className="rounded-full hover:bg-cyan-500 ">
