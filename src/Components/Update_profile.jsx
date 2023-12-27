@@ -7,7 +7,7 @@ const Update_profile = () => {
     <div className=' relative flex '>
     <Sidebar/>
     {/* <!-- component --> */}
-<section class="max-w-6xl p-8 mx-auto bg-gray-600 rounded-md shadow-md dark:bg-gray-800 mt-20 mb-20 ">
+    <section class="p-8 w-full rounded-md shadow-md dark:bg-gray-800 mt-20 mb-20 ">
     <h1 class="text-xl font-bold text-black capitalize dark:text-black">Account settings</h1>
     <form>
         <div class="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
