@@ -2,8 +2,8 @@
     "users": [
         {
             "id":"1",
-            "company name":"infosys",
-            "Home":"india",
+            "company":"infosys",
+            "home":"india",
             "about":"it company",
             "contact":"46546546"
         }

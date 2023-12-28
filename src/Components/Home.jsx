@@ -2,6 +2,7 @@ import React from "react";
 import Sidebar from "./Sidebar";
 import Header from "./Header";
 import Table from "./Table";
+import Table1 from "./Table1"
 const Home = () => {
   return (
     <>
@@ -64,7 +65,8 @@ const Home = () => {
               <h1 className="m-4 text-3xl font-bold">Recent Orders</h1>
 
               {/* table start */}
-              <Table />
+              {/* <Table /> */}
+              <Table1/>
               {/* table end */}
               {/* upper boxex ends */}
             </div>
