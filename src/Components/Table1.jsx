@@ -2,16 +2,22 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 const Table1 = () => {
-  const [data, setData] = useState();
+  const [data, setData] = useState([]);
   useEffect(() => {
-    axios
-      .get("http://localhost:3000/users")
-      .then((res) => console.log(res))
-      .catch((er) => console.log(er));
-  });
+    axios.get("http://localhost:3000/users")
+      .then((res) => setData(res.data))
+      .catch(er => console.log(er))
+  },[]);
   return (
     <>
       <div>
+        <div>
+          <input type="text" placeholder="company name" className="p-5 m-5 border-black border" />
+          <input type="text" placeholder="Home"className="p-5 m-5 border-black border" />
+          <input type="text" placeholder="About" className="p-5 m-5 border-black border"/>
+          <input type="text" placeholder="contact" className="p-5 m-5 border-black border"/>
+          <button className="bg-blue-500 border border-black py-5 px-8 m-5 rounded-full ">Add</button>
+        </div>
         <table>
           <thead>
             <tr>
