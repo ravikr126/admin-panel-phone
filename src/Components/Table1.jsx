@@ -7,6 +7,7 @@ const Table1 = () => {
   const [About, setAbout] = useState("");
   const [contact, setContact] = useState("");
   const [company, setCompany] = useState("");
+  const [editId, setEditId] = useState(-1);
 
   useEffect(() => {
     axios
@@ -17,7 +18,7 @@ const Table1 = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const id = data[data.length - 1].id + 1;
+    const id = data[data.length + 1].id + 1;
     axios
       .post("http://localhost:3000/users", {
         id: id,
@@ -26,9 +27,13 @@ const Table1 = () => {
         contact: contact,
         company: company,
       })
-      .then((res) => console.log(res))
+      .then((res) => {location.reload()}  )
       .catch((er) => console.log(er));
   };
+
+  const handleEdit =(id)=>{
+
+  }
   return (
     <>
       <div>
@@ -81,6 +86,10 @@ const Table1 = () => {
                 <td>{user.home}</td>
                 <td>{user.about}</td>
                 <td>{user.contact}</td>
+                <td>
+                  <button onClick={() => handleEdit(user.id)}> Edit</button>
+                  <button onClick={() => handleRemove(user.id)}> Remove</button>
+                </td>
               </tr>
             ))}
           </tbody>
