@@ -15,7 +15,9 @@ const Header = () => {
           />
         </div>
         <div className="text-center">
-          <AccountCircleIcon className="m-5" />
+          <button>
+            <AccountCircleIcon className="m-5" />
+          </button>
         </div>
       </div>
     </>
