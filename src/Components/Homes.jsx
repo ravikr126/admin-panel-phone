@@ -1,16 +1,13 @@
 import React from "react";
-import Sidebar from "./Sidebar";
-import Header from "./Header";
-import Table from "./Table";
-import Table1 from "./Table1"
-const Home = () => {
+import Tables from "./Tables";
+const Homes = () => {
   return (
     <>
       <div>
         {/* code start */}
-        <Header />
+
         <div className=" relative flex flex-row ">
-          <Sidebar />
+        
 
           {/* home section start */}
           <div className="flex flex-col ">
@@ -66,7 +63,7 @@ const Home = () => {
 
               {/* table start */}
               {/* <Table /> */}
-              <Table1/>
+              <Tables />
               {/* table end */}
               {/* upper boxex ends */}
             </div>
@@ -80,4 +77,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Homes;
