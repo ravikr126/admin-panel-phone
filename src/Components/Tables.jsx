@@ -1,10 +1,8 @@
 import React from "react";
 
-const Table = () => {
+const Tables = () => {
   return (
     <>
-
-    
       <div class="items-center bg-gray-100 dark:bg-gray-900 block">
         <div class="w-full mx-auto lg:container">
           <div class="w-full">
@@ -263,4 +261,4 @@ const Table = () => {
   );
 };
 
-export default Table;
+export default Tables;
