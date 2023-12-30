@@ -14,8 +14,8 @@ const Homes = () => {
             {/* upper boxex */}
 
             <div class="h-screen mx-10 my-5 ">
-              <div class="grid grid-cols-2 md:grid-cols-4 gap-20 pt-4 ">
-                <div class="pt-2 pb-8 bg-cyan-300 p-4  rounded-3xl ">
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-20 pt-4">
+                <div class="pt-2 pb-8 bg-cyan-300 p-4">
                   <h2 class="font-semibold text-xl pt-4 text-gray-800">
                     Feature 1
                   </h2>
@@ -25,7 +25,7 @@ const Homes = () => {
                     two columns instead of four.
                   </p>
                 </div>
-                <div class="pt-2 pb-8 bg-cyan-300 p-4  rounded-3xl">
+                <div class="pt-2 pb-8 bg-cyan-300 p-4">
                   <h2 class="font-semibold text-xl pt-4 text-gray-800">
                     Feature 2
                   </h2>
@@ -35,7 +35,7 @@ const Homes = () => {
                     two columns instead of four.
                   </p>
                 </div>
-                <div class="pt-2 pb-8 bg-cyan-300 p-4  rounded-3xl">
+                <div class="pt-2 pb-8 bg-cyan-300 p-4">
                   <h2 class="m-auto font-semibold text-xl pt-4 text-gray-800">
                     Feature 3
                   </h2>
@@ -45,7 +45,7 @@ const Homes = () => {
                     two columns instead of four.
                   </p>
                 </div>
-                <div class="pt-2 pb-8 bg-cyan-300 p-4  rounded-3xl">
+                <div class="pt-2 pb-8 bg-cyan-300 p-4">
                   <h2 class="font-semibold text-xl pt-4 text-gray-800">
                     Feature 4
                   </h2>
