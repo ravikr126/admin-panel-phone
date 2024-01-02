@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import Homes from './Components/Homes'
-import Header from './Components/Header'
-import table2 from './Components/table2'
-import Categories from './Components/Categories'
+// import Homes from './Components/Homes'
+// import Header from './Components/Header'
+import Table2 from './Components/Table2'
+// import Categories from './Components/Categories'
 
 const App = () => {
   return (
@@ -11,7 +11,7 @@ const App = () => {
     {/* <Header/>
     <Homes/> */}
     {/* <Categories/> */}
-    <table2/>
+    <Table2/>
     
     
     
