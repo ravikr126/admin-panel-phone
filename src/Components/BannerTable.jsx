@@ -5,18 +5,18 @@ import { Switch } from "antd";
 import { MdDelete } from "react-icons/md";
 import { FaRegEdit } from "react-icons/fa";
 
-const Categories = () => {
+const BannerTable = () => {
   const [data, setData] = useState([]);
   const [checked, setChecked] = useState(true);
   const [loading, setLoading] = useState(false);
 
-  const handleChangeStatus = async (isChecked, id) => {
+  const handleChange = async (isChecked, id) => {
     try {
       setLoading(true);
 
       // Make an API request to update the status
       const response = await axios.post(
-        `http://penguinfe.golu.in:7000/categories/status/${id}`,
+        `http://penguinfe.golu.in:7000/banners/status/${id}`,
         { status: isChecked }
       );
 
@@ -37,7 +37,7 @@ const Categories = () => {
     try {
       // Send a DELETE request to the API endpoint for deleting a category
       const response = await axios.delete(
-        `http://penguinfe.golu.in:7000/categories/${itemId}`
+        `http://penguinfe.golu.in:7000/banners/${itemId}`
       );
 
       // Update the local data array after successful deletion
@@ -50,38 +50,12 @@ const Categories = () => {
     }
   };
 
-  const handleChange = async (isChecked, itemId) => {
-    try {
-      console.log("Updating status for item with ID:", itemId);
-
-      // Send a request to update the status in the API
-      const response = await axios.put(
-        `http://penguinfe.golu.in:7000/categories?id=${itemId}`,
-        {
-          status: isChecked,
-        }
-      );
-
-      console.log("API Response:", response.data);
-
-      // Update the local data array
-      const updatedData = data.map((item) =>
-        item.id === itemId ? { ...item, status: !isChecked } : item
-      );
-
-      setData(updatedData);
-      setChecked(isChecked);
-    } catch (error) {
-      console.error("Error updating status:", error);
-    }
-  };
-
   useEffect(() => {
     const fetchData = async () => {
       try {
         // Use axios to fetch data
         const response = await axios.get(
-          "http://penguinfe.golu.in:7000/categories"
+          "http://penguinfe.golu.in:7000/banners"
         );
 
         // Access the data property from the response
@@ -105,7 +79,7 @@ const Categories = () => {
     <>
       <div className="m-10">
         <div className="max-w-7xl mt-10 mb-10 p-8 mx-auto bg-white rounded-md shadow-md border border-gray-200 flex flex-row justify-between">
-          <h1 className="font-serif text-3xl font-bold">Category</h1>
+          <h1 className="font-serif text-3xl font-bold">Banner Table</h1>
           <h3 className="text-right pr-5">
             <Link
               to="/dashboard"
@@ -113,12 +87,12 @@ const Categories = () => {
             >
               Dashboard
             </Link>{" "}
-            / Category
+            / BannerTable
           </h3>
         </div>
 
         <Link
-          to="/CategoryForm"
+          to="/Banner"
           className="bg-green-200 hover:bg-green-500 border rounded p-3 m-10"
         >
           <span className="font-bold text-xl">+</span> Add New
@@ -142,18 +116,15 @@ const Categories = () => {
                       </div>
                     </th>
                     <th className="px-3 py-3 text-black text-xs font-normal text-left  uppercase align-middle">
-                      Name
+                      Title
                     </th>
                     <th className="px-3 py-3 text-xs font-normal text-left text-gray-500 uppercase align-middle">
                       Image
                     </th>
                     <th className="px-3 py-3 text-xs font-normal text-left text-gray-500 uppercase align-middle">
-                      Icon
-                    </th>
-                    <th className="px-3 py-3 text-xs font-normal text-left text-gray-500 uppercase align-middle">
                       Status
                     </th>
-                    <th className="px-3 py-3 text-xs font-normal text-right text-gray-500 uppercase align-middle">
+                    <th className="px-3 py-3 text-xs font-normal text-center text-gray-500 uppercase align-middle">
                       Action
                     </th>
                   </tr>
@@ -168,7 +139,7 @@ const Categories = () => {
                           className="w-4 h-4 rounded opacity-50"
                         />
                       </td>
-                      <td className="px-3 py-4 text-gray-600 ">{item.name}</td>
+                      <td className="px-3 py-4 text-gray-600 ">{item.title}</td>
                       <td className="px-3 py-4 text-gray-500 w-2/6 text-center">
                         <img
                           src={`http://penguinfe.golu.in:7000/${item.image}`}
@@ -176,23 +147,19 @@ const Categories = () => {
                           className="h-1/3 w-1/3"
                         />
                       </td>
-                      <td className="px-3 py-4">
-                        <div className="flex items-center w-max">
-                          {item.icon}
-                        </div>
-                      </td>
+
                       <td className="px-3 py-4">
                         <Switch
                           defaultChecked={item.status}
                           checkedChildren="Active"
                           unCheckedChildren="Inactive"
                           onChange={(isChecked) =>
-                            handleChangeStatus(isChecked, item.id)
+                            handleChange(isChecked, item.id)
                           }
                           className={`${
                             item.status
-                              ? "bg-blue-500 text-white"
-                              : "bg-black text-white"
+                              ? "bg-green-500 text-white"
+                              : "bg-red-500 text-white"
                           } p-2 rounded-md`}
                           loading={loading}
                         />
@@ -216,10 +183,9 @@ const Categories = () => {
             </div>
           </div>
         </div>
-        {/* ////////////////////////////////////////////////////// */}
       </div>
     </>
   );
 };
 
-export default Categories;
+export default BannerTable;

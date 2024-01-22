@@ -5,7 +5,7 @@ import { Switch } from "antd";
 import { MdDelete } from "react-icons/md";
 import { FaRegEdit } from "react-icons/fa";
 
-const Categories = () => {
+const Brand_list = () => {
   const [data, setData] = useState([]);
   const [checked, setChecked] = useState(true);
   const [loading, setLoading] = useState(false);
@@ -16,7 +16,7 @@ const Categories = () => {
 
       // Make an API request to update the status
       const response = await axios.post(
-        `http://penguinfe.golu.in:7000/categories/status/${id}`,
+        `http://penguinfe.golu.in:7000/brands/status/${id}`,
         { status: isChecked }
       );
 
@@ -37,7 +37,7 @@ const Categories = () => {
     try {
       // Send a DELETE request to the API endpoint for deleting a category
       const response = await axios.delete(
-        `http://penguinfe.golu.in:7000/categories/${itemId}`
+        `http://penguinfe.golu.in:7000/brands/${itemId}`
       );
 
       // Update the local data array after successful deletion
@@ -56,7 +56,7 @@ const Categories = () => {
 
       // Send a request to update the status in the API
       const response = await axios.put(
-        `http://penguinfe.golu.in:7000/categories?id=${itemId}`,
+        `http://penguinfe.golu.in:7000/brands?id=${itemId}`,
         {
           status: isChecked,
         }
@@ -81,14 +81,13 @@ const Categories = () => {
       try {
         // Use axios to fetch data
         const response = await axios.get(
-          "http://penguinfe.golu.in:7000/categories"
+          "http://penguinfe.golu.in:7000/brands"
         );
 
         // Access the data property from the response
-        const result = response.data;
-
+        const result = response.data.message;
         // Set the state with the fetched data
-        setData(result.data);
+        setData(result);
 
         // Note: You won't see the updated state immediately due to the asynchronous nature of setState.
         // If you want to log the updated state, you can use a separate useEffect hook.
@@ -105,7 +104,7 @@ const Categories = () => {
     <>
       <div className="m-10">
         <div className="max-w-7xl mt-10 mb-10 p-8 mx-auto bg-white rounded-md shadow-md border border-gray-200 flex flex-row justify-between">
-          <h1 className="font-serif text-3xl font-bold">Category</h1>
+          <h1 className="font-serif text-3xl font-bold">Brand List</h1>
           <h3 className="text-right pr-5">
             <Link
               to="/dashboard"
@@ -113,15 +112,15 @@ const Categories = () => {
             >
               Dashboard
             </Link>{" "}
-            / Category
+            / Brand List
           </h3>
         </div>
 
         <Link
-          to="/CategoryForm"
+          to="/BrandForm"
           className="bg-green-200 hover:bg-green-500 border rounded p-3 m-10"
         >
-          <span className="font-bold text-xl">+</span> Add New
+          <span className="font-bold text-xl">+</span> Add New Brand
         </Link>
 
         {/* Table start */}
@@ -145,10 +144,10 @@ const Categories = () => {
                       Name
                     </th>
                     <th className="px-3 py-3 text-xs font-normal text-left text-gray-500 uppercase align-middle">
-                      Image
+                      Logo
                     </th>
                     <th className="px-3 py-3 text-xs font-normal text-left text-gray-500 uppercase align-middle">
-                      Icon
+                      Slug
                     </th>
                     <th className="px-3 py-3 text-xs font-normal text-left text-gray-500 uppercase align-middle">
                       Status
@@ -159,7 +158,7 @@ const Categories = () => {
                   </tr>
                 </thead>
                 <tbody className="text-sm bg-white divide-y divide-gray-200">
-                  {data.map((item) => (
+                  {data?.map((item) => (
                     <tr key={item.id}>
                       <td className="w-20 px-3 py-4 text-center">
                         <input
@@ -171,14 +170,14 @@ const Categories = () => {
                       <td className="px-3 py-4 text-gray-600 ">{item.name}</td>
                       <td className="px-3 py-4 text-gray-500 w-2/6 text-center">
                         <img
-                          src={`http://penguinfe.golu.in:7000/${item.image}`}
+                          src={`http://penguinfe.golu.in:7000/${item.logo}`}
                           alt=""
                           className="h-1/3 w-1/3"
                         />
                       </td>
                       <td className="px-3 py-4">
                         <div className="flex items-center w-max">
-                          {item.icon}
+                          {item.slug}
                         </div>
                       </td>
                       <td className="px-3 py-4">
@@ -216,10 +215,9 @@ const Categories = () => {
             </div>
           </div>
         </div>
-        {/* ////////////////////////////////////////////////////// */}
       </div>
     </>
   );
 };
 
-export default Categories;
+export default Brand_list;
