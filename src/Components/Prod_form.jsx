@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 const Prod_form = () => {
   const URL = "";
-  const [Data, setData] = useState([
+  const [categoryData, setCategoryData] = useState([
     {
       name: "",
       Short_name: "",

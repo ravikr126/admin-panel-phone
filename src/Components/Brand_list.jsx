@@ -50,31 +50,7 @@ const Brand_list = () => {
     }
   };
 
-  const handleChange = async (isChecked, itemId) => {
-    try {
-      console.log("Updating status for item with ID:", itemId);
-
-      // Send a request to update the status in the API
-      const response = await axios.put(
-        `http://penguinfe.golu.in:7000/brands?id=${itemId}`,
-        {
-          status: isChecked,
-        }
-      );
-
-      console.log("API Response:", response.data);
-
-      // Update the local data array
-      const updatedData = data.map((item) =>
-        item.id === itemId ? { ...item, status: !isChecked } : item
-      );
-
-      setData(updatedData);
-      setChecked(isChecked);
-    } catch (error) {
-      console.error("Error updating status:", error);
-    }
-  };
+  
 
   useEffect(() => {
     const fetchData = async () => {

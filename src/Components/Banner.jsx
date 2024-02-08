@@ -60,6 +60,23 @@ const Banner = () => {
     }));
   };
 
+  const [uploadedFiles, setUploadedFiles] = useState([]);
+
+  const handleInputChangeFile = (e) => {
+    const files = e.target.files;
+
+    // Display the uploaded files
+    const fileArray = Array.from(files).map((file) => ({
+      url: URL.createObjectURL(file),
+      id: Math.random().toString(36).substring(7), // Generate a unique ID for each file
+    }));
+    setUploadedFiles((prevFiles) => [...prevFiles, ...fileArray]);
+  };
+
+  const handleDelete = (id) => {
+    setUploadedFiles((prevFiles) => prevFiles.filter((file) => file.id !== id));
+  };
+
   return (
     <>
       <div className="m-10">
@@ -193,38 +210,65 @@ const Banner = () => {
                 </label>
 
                 <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
-                  <div className="space-y-1 text-center">
-                    <svg
-                      id="Image"
-                      className="mx-auto h-12 w-12 text-black"
-                      stroke="currentColor"
-                      fill="none"
-                      viewBox="0 0 48 48"
-                      aria-hidden="true"
+                <div className="space-y-1 text-center">
+                  <svg
+                    id="logo"
+                    className="mx-auto h-12 w-12 text-black"
+                    stroke="currentColor"
+                    fill="none"
+                    viewBox="0 0 48 48"
+                    aria-hidden="true"
+                  >
+                    {/* Your SVG path here */}
+                  </svg>
+                  <div className="flex text-sm text-gray-600">
+                    <label
+                      htmlFor="file_upload"
+                      className="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500"
                     >
-                      {/* Your SVG path here */}
-                    </svg>
-                    <div className="flex text-sm text-gray-600">
-                      <label
-                        htmlFor="file_upload"
-                        className="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500"
-                      >
-                        <span className="">Upload a file</span>
-                        <input
-                          id="file_upload"
-                          name="image"
-                          type="file"
-                          onChange={handleInputChange}
-                          className="sr-only"
-                        />
-                      </label>
-                      <p className="pl-1 text-black">or drag and drop</p>
-                    </div>
-                    <p className="text-xs text-black">
-                      PNG, JPG, GIF up to 10MB
-                    </p>
+                      <span className="">Upload a file</span>
+                      <input
+                        id="file_upload"
+                        name="logo"
+                        type="file"
+                        onChange={handleInputChangeFile}
+                        className="sr-only"
+                        multiple // Allow multiple file selection
+                      />
+                    </label>
+                    <p className="pl-1 text-black">or drag and drop</p>
                   </div>
+                  <p className="text-xs text-black">PNG, JPG, GIF up to 10MB</p>
                 </div>
+                {/* file upload option ends here */}
+
+                {/* Display uploaded files */}
+                {uploadedFiles.length > 0 && (
+                  <div className="mt-4">
+                    <h2 className="text-lg font-semibold">Uploaded Files:</h2>
+                    <ul className="list-disc pl-4 mt-2">
+                      {uploadedFiles.map((file) => (
+                        <li
+                          key={file.id}
+                          className="flex items-center justify-between mb-2"
+                        >
+                          <img
+                            src={file.url}
+                            alt={`uploaded-${file.id}`}
+                            className="max-w-16 max-h-16 object-cover"
+                          />
+                          <button
+                            onClick={() => handleDelete(file.id)}
+                            className="text-red-500 hover:text-red-700 ml-2 focus:outline-none"
+                          >
+                            Delete
+                          </button>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
               </div>
 
               <div>

@@ -13,61 +13,58 @@ const Dashboard = () => {
         <br />
         <div class="grid grid-cols-2 md:grid-cols-3 gap-10 pt-2 justify-between">
           {/* 1st box */}
-          <div class="py-2 bg-white drop-shadow-xl p-4 border  rounded">
-            <h2 class="font-semibold text-xl pt-4 text-gray-300  ">
-              Total sells
+          <div class="py-2 bg-white drop-shadow-xl p-4 border rounded">
+            <h2 class="font-semibold text-xl pt-4 text-gray-300">
+              Total Sales
             </h2>
-            <div className="flex flex-row ">
-              <p class="text-black-500 text-3xl mr-20 ">$500</p>
-
-              <div className="flex flex-col text-right ">
-                <p className="text-xl text-green-500 ml-5">
-                  {" "}
-                  <MdArrowOutward className="ml-36" />
+            <div class="flex flex-col sm:flex-row">
+              <p class="text-black-500 text-3xl sm:mr-20 mb-4 sm:mb-0">$500</p>
+              <div class="flex flex-col text-center sm:text-right">
+                <p class="text-xl text-green-500 sm:ml-5">
+                  <MdArrowOutward class="mx-auto sm:mx-0" />
                   34.7%
                 </p>
-                <p className="text-gray-300">Compared to April 2021</p>
+                <p class="text-gray-300">Compared to April 2021</p>
               </div>
             </div>
           </div>
+
           {/* 1st box end */}
 
           {/* 2nd box start */}
 
-          <div class="py-2 bg-white drop-shadow-xl  p-4 border  rounded">
-            <h2 class="font-semibold text-xl pt-4 text-gray-300  ">
-              Total sells
+          <div class="py-2 bg-white drop-shadow-xl p-4 border rounded">
+            <h2 class="font-semibold text-xl pt-4 text-gray-300">
+              Total Sales
             </h2>
-            <div className="flex flex-row ">
-              <p class="text-black-500 text-3xl mr-20 ">$500</p>
+            <div class="flex flex-col sm:flex-row">
+              <p class="text-black-500 text-3xl sm:mr-20 mb-4 sm:mb-0">$500</p>
 
-              <div className="flex flex-col text-right ">
-                <p className="text-xl text-green-500 ml-5">
-                  {" "}
-                  <MdArrowOutward className="ml-36" />
+              <div class="flex flex-col text-center sm:text-right">
+                <p class="text-xl text-green-500 sm:ml-5">
+                  <MdArrowOutward class="mx-auto sm:mx-0" />
                   34.7%
                 </p>
-                <p className="text-gray-300">Compared to April 2021</p>
+                <p class="text-gray-300">Compared to April 2021</p>
               </div>
             </div>
           </div>
-          {/* 2nd box end */}
+          {/* <!-- 2nd box end --> */}
 
-          {/* 3rd box start */}
-          <div class="py-2 bg-white drop-shadow-xl p-4 border  rounded">
-            <h2 class="font-semibold text-xl pt-4 text-gray-300  ">
-              Total sells
+          {/* <!-- 3rd box start --> */}
+          <div class="py-2 bg-white drop-shadow-xl p-4 border rounded">
+            <h2 class="font-semibold text-xl pt-4 text-gray-300">
+              Total Sales
             </h2>
-            <div className="flex flex-row ">
-              <p class="text-black-500 text-3xl mr-20 ">$500</p>
+            <div class="flex flex-col sm:flex-row">
+              <p class="text-black-500 text-3xl sm:mr-20 mb-4 sm:mb-0">$500</p>
 
-              <div className="flex flex-col text-right ">
-                <p className="text-xl text-green-500 ml-5">
-                  {" "}
-                  <MdArrowOutward className="ml-36" />
+              <div class="flex flex-col text-center sm:text-right">
+                <p class="text-xl text-green-500 sm:ml-5">
+                  <MdArrowOutward class="mx-auto sm:mx-0" />
                   34.7%
                 </p>
-                <p className="text-gray-300">Compared to April 2021</p>
+                <p class="text-gray-300">Compared to April 2021</p>
               </div>
             </div>
           </div>
